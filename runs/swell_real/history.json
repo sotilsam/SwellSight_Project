@@ -1,0 +1,21 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 0.09993005480048588,
+    "val_loss": 0.0801851220735132,
+    "train_mae": 0.39271795749664307,
+    "train_mse": 0.25070175528526306,
+    "train_rmse": 0.5007012486457825,
+    "train_wave_type_acc": 0.994854211807251,
+    "train_direction_acc": 0.9931389093399048,
+    "train_wave_type_macro_f1": 0.9974204897880554,
+    "train_direction_macro_f1": 0.9965576529502869,
+    "val_mae": 0.3641913831233978,
+    "val_mse": 0.1849839687347412,
+    "val_rmse": 0.43009763956069946,
+    "val_wave_type_acc": 1.0,
+    "val_direction_acc": 1.0,
+    "val_wave_type_macro_f1": 1.0,
+    "val_direction_macro_f1": 1.0
+  }
+]

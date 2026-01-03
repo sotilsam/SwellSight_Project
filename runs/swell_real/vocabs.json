@@ -1,0 +1,8 @@
+{
+  "wave_type_to_id": {
+    "beach_break": 0
+  },
+  "direction_to_id": {
+    "both": 0
+  }
+}
