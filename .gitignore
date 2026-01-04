@@ -1,1 +1,5 @@
-.DS_Store/
+.DS_Store
+**/.DS_Store
+data/synthetic/
+**/__pycache__/
+*.pyc
