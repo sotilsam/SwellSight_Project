@@ -185,29 +185,203 @@ PYTHONPATH=. python scripts/04_build_mix_splits.py \
 - `data/synthetic/mix/train.jsonl` - Combined training data
 - `data/synthetic/mix/val.jsonl` - Validation split
 - `data/synthetic/mix/test.jsonl` - Test split
+## Running Jupyter Notebooks
+
+### Prerequisites for Notebooks
+
+1. **Install Jupyter Lab or Jupyter Notebook:**
+   ```bash
+   # Activate your virtual environment first
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   
+   # Install Jupyter (choose one)
+   pip install jupyterlab          # Recommended - modern interface
+   # OR
+   pip install notebook            # Classic interface
+   ```
+
+2. **Install additional notebook dependencies:**
+   ```bash
+   pip install ipywidgets tqdm matplotlib seaborn pandas
+   ```
+
+### Method 1: Using Jupyter Lab (Recommended)
+
+1. **Start Jupyter Lab:**
+   ```bash
+   # Make sure you're in the project root directory
+   cd SwellSight_Project
+   
+   # Set Python path and start Jupyter Lab
+   export PYTHONPATH="."
+   jupyter lab
+   ```
+
+2. **Your browser will open automatically** showing the Jupyter Lab interface
+
+3. **Navigate and run notebooks:**
+   - Click on any `.ipynb` file in the file browser (left panel)
+   - Run cells by pressing `Shift + Enter` or clicking the ▶️ button
+   - Run all cells with `Run → Run All Cells` from the menu
+
+### Method 2: Using Jupyter Notebook (Classic)
+
+1. **Start Jupyter Notebook:**
+   ```bash
+   # Make sure you're in the project root directory
+   cd SwellSight_Project
+   
+   # Set Python path and start Jupyter Notebook
+   export PYTHONPATH="."
+   jupyter notebook
+   ```
+
+2. **Your browser will open** showing the file browser
+
+3. **Click on any `.ipynb` file** to open it
+
+4. **Run cells** using `Shift + Enter` or the toolbar buttons
+
+### Method 3: Using VS Code (If you have it installed)
+
+1. **Install Python and Jupyter extensions** in VS Code
+
+2. **Open the project folder** in VS Code
+
+3. **Click on any `.ipynb` file** - VS Code will open it in notebook mode
+
+4. **Select your Python interpreter** (the one from your `.venv` folder)
+
+5. **Run cells** by clicking the ▶️ button next to each cell
+
+### Recommended Notebook Execution Order
+
+**For first-time users:**
+
+1. **Start here:** `01_model_architecture.ipynb`
+   - Understand the neural network structure
+   - No data required, works immediately
+
+2. **Data setup:** `04_build_real_index.ipynb`
+   - Process your downloaded dataset
+   - Creates the index files needed for training
+
+3. **Create splits:** `05_create_splits.ipynb`
+   - Split data into train/validation/test sets
+   - Analyzes data distribution
+
+4. **Explore depth generation:** `06_depth_map_generation.ipynb`
+   - Interactive parameter exploration
+   - Understand synthetic data generation
+
+5. **Train model:** `07_train_model.ipynb`
+   - Full training pipeline with live visualization
+   - Requires GPU for best performance
+
+6. **Run inference:** `08_inference.ipynb`
+   - Test trained models on new images
+   - Analyze model performance
+
+### Troubleshooting Notebook Issues
+
+**Problem: "ModuleNotFoundError: No module named 'swellsight'"**
+```bash
+# Solution: Set Python path before starting Jupyter
+export PYTHONPATH="."
+jupyter lab
+```
+
+**Problem: "Kernel not found" or Python environment issues**
+```bash
+# Solution: Install ipykernel in your virtual environment
+source .venv/bin/activate
+pip install ipykernel
+python -m ipykernel install --user --name swellsight --display-name "SwellSight"
+
+# Then select "SwellSight" kernel in Jupyter
+```
+
+**Problem: Widgets not displaying properly**
+```bash
+# Solution: Install and enable widget extensions
+pip install ipywidgets
+jupyter labextension install @jupyter-widgets/jupyterlab-manager  # For Jupyter Lab
+```
+
+**Problem: Plots not showing**
+```bash
+# Solution: Install matplotlib backend
+pip install matplotlib
+# Add this to the first cell of notebooks:
+%matplotlib inline
+```
+
+### Quick Start Commands
+
+**For Standalone Notebooks (Easiest):**
+```bash
+# Just start Jupyter - no setup needed!
+jupyter lab
+# Then open any *_standalone.ipynb file and run all cells
+```
+
+**For Interconnected Notebooks (Full Project):**
+```bash
+cd SwellSight_Project && source .venv/bin/activate && export PYTHONPATH="." && jupyter lab
+```
+
+**For Windows users:**
+```cmd
+cd SwellSight_Project && .venv\Scripts\activate && set PYTHONPATH=. && jupyter lab
+```
+
 ## Jupyter Notebooks
 
-This project includes comprehensive Jupyter notebooks for interactive development and analysis:
+This project includes comprehensive Jupyter notebooks for interactive development and analysis. **Two versions are available:**
 
-### Foundation Notebooks
+### 🔗 **Interconnected Notebooks** (Original)
+These notebooks work together and import from each other:
 - `01_model_architecture.ipynb` - SwellSight neural network architecture
 - `02_data_loading.ipynb` - Data utilities, transforms, and dataset classes  
 - `03_loss_and_metrics.ipynb` - Multi-task loss functions and evaluation metrics
-
-### Data Pipeline Notebooks
 - `04_build_real_index.ipynb` - Build dataset index from labels.json
 - `05_create_splits.ipynb` - Create stratified train/val/test splits
-
-### Advanced Notebooks
 - `06_depth_map_generation.ipynb` - Procedural depth map generation with interactive widgets
 - `07_train_model.ipynb` - Complete training pipeline with live visualization
 - `08_inference.ipynb` - Single and batch inference with comprehensive analysis
 
-**Getting Started with Notebooks:**
+### 🚀 **Standalone Notebooks** (Recommended for Easy Use)
+These notebooks include all necessary code and work independently:
+- `01_model_architecture_standalone.ipynb` - Complete model definition and testing
+- `02_data_loading_standalone.ipynb` - Full data pipeline with dummy data support
+- More standalone versions coming soon...
+
+### **Which Version Should You Use?**
+
+**Use Standalone Notebooks if:**
+- ✅ You want to run notebooks without setting up the full project structure
+- ✅ You're exploring individual components
+- ✅ You don't have the dataset downloaded yet
+- ✅ You want everything to "just work" immediately
+
+**Use Interconnected Notebooks if:**
+- ✅ You have the full project setup with dataset
+- ✅ You want to run the complete pipeline
+- ✅ You're doing serious development work
+
+### **Getting Started with Standalone Notebooks:**
+
+1. **No setup required** - just open and run!
+2. **Auto-installs dependencies** - notebooks install missing packages
+3. **Works with dummy data** - creates sample data if real data is missing
+4. **Start with**: `01_model_architecture_standalone.ipynb`
+
+### **Getting Started with Interconnected Notebooks:**
 1. Ensure you have downloaded the [dataset](https://drive.google.com/drive/folders/11gDkj5GhGVXM9uMlJaVp0b_jIxK_OaoZ?usp=drive_link)
-2. Start with `01_model_architecture.ipynb` to understand the model
-3. Use `04_build_real_index.ipynb` to process your downloaded dataset
-4. Follow the numbered sequence for the complete workflow
+2. Set up the project structure and Python path
+3. Start with `01_model_architecture.ipynb` to understand the model
+4. Use `04_build_real_index.ipynb` to process your downloaded dataset
+5. Follow the numbered sequence for the complete workflow
 
 ## Training
 
