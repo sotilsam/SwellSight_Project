@@ -339,22 +339,19 @@ cd SwellSight_Project && .venv\Scripts\activate && set PYTHONPATH=. && jupyter l
 
 This project includes comprehensive Jupyter notebooks for interactive development and analysis. **Two versions are available:**
 
-### 🔗 **Interconnected Notebooks** (Original)
-These notebooks work together and import from each other:
-- `01_model_architecture.ipynb` - SwellSight neural network architecture
-- `02_data_loading.ipynb` - Data utilities, transforms, and dataset classes  
-- `03_loss_and_metrics.ipynb` - Multi-task loss functions and evaluation metrics
-- `04_build_real_index.ipynb` - Build dataset index from labels.json
-- `05_create_splits.ipynb` - Create stratified train/val/test splits
-- `06_depth_map_generation.ipynb` - Procedural depth map generation with interactive widgets
-- `07_train_model.ipynb` - Complete training pipeline with live visualization
-- `08_inference.ipynb` - Single and batch inference with comprehensive analysis
+### 🔗 **Interconnected Notebooks** (Original - Removed)
+The original interconnected notebooks have been replaced with standalone versions for easier use. All functionality is now available in the standalone notebooks above.
 
 ### 🚀 **Standalone Notebooks** (Recommended for Easy Use)
 These notebooks include all necessary code and work independently:
 - `01_model_architecture_standalone.ipynb` - Complete model definition and testing
 - `02_data_loading_standalone.ipynb` - Full data pipeline with dummy data support
-- More standalone versions coming soon...
+- `03_loss_and_metrics_standalone.ipynb` - Loss functions and evaluation metrics
+- `04_build_real_index_standalone.ipynb` - Dataset indexing and processing
+- `05_create_splits_standalone.ipynb` - Data splitting and analysis
+- `06_depth_map_generation_standalone.ipynb` - AI-powered wave image generation
+- `07_train_model_standalone.ipynb` - Complete training pipeline
+- `08_inference_standalone.ipynb` - Model inference and analysis
 
 ### **Which Version Should You Use?**
 
@@ -363,25 +360,27 @@ These notebooks include all necessary code and work independently:
 - ✅ You're exploring individual components
 - ✅ You don't have the dataset downloaded yet
 - ✅ You want everything to "just work" immediately
+- ✅ You want to generate AI-powered wave images
+- ✅ You're learning about the SwellSight system
 
-**Use Interconnected Notebooks if:**
+**Use Python Scripts if:**
 - ✅ You have the full project setup with dataset
-- ✅ You want to run the complete pipeline
-- ✅ You're doing serious development work
+- ✅ You want to run the complete pipeline for production
+- ✅ You're doing batch processing or automated workflows
+- ✅ You need maximum performance and efficiency
 
 ### **Getting Started with Standalone Notebooks:**
 
 1. **No setup required** - just open and run!
 2. **Auto-installs dependencies** - notebooks install missing packages
 3. **Works with dummy data** - creates sample data if real data is missing
-4. **Start with**: `01_model_architecture_standalone.ipynb`
+4. **AI image generation** - `06_depth_map_generation_standalone.ipynb` creates realistic wave images
+5. **Start with**: `01_model_architecture_standalone.ipynb`
 
-### **Getting Started with Interconnected Notebooks:**
+### **Getting Started with Python Scripts:**
 1. Ensure you have downloaded the [dataset](https://drive.google.com/drive/folders/11gDkj5GhGVXM9uMlJaVp0b_jIxK_OaoZ?usp=drive_link)
 2. Set up the project structure and Python path
-3. Start with `01_model_architecture.ipynb` to understand the model
-4. Use `04_build_real_index.ipynb` to process your downloaded dataset
-5. Follow the numbered sequence for the complete workflow
+3. Follow the Data Pipeline section above for the complete workflow
 
 ## Training
 
